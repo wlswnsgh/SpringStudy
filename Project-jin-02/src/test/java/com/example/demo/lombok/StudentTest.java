@@ -13,10 +13,10 @@ public class StudentTest {
 		std1.set이름("진준호");
 		std1.set학번(21);
 		std1.set나이(24);
-		
+
 		Student std2 = new Student(22, "홍길동", 26);
 		System.out.println(std2.toString());
-		
+
 		Student std3 = Student.builder()
 							  .이름("김길동")
 							  .학번(23)

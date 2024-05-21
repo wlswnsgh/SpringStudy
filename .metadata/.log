@@ -7922,3 +7922,113 @@ java.lang.IllegalStateException: must specify at least one linked position
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+
+!ENTRY org.eclipse.debug.core 4 2 2024-05-21 12:12:41.389
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/demo}.
+	at org.eclipse.buildship.core.internal.launch.BaseRunConfigurationAttributes.getWorkingDir(BaseRunConfigurationAttributes.java:83)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:226)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:188)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:65)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:420)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:410)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:920)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:689)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:763)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 120 2024-05-21 12:12:41.389
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/demo}.
+	at org.eclipse.buildship.core.internal.launch.BaseRunConfigurationAttributes.getWorkingDir(BaseRunConfigurationAttributes.java:83)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:226)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:188)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:65)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:420)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:410)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:920)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:689)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:763)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-05-21 12:12:41.426
+!MESSAGE An internal error occurred during: "Launching demo - bootJar".
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/demo}.
+	at org.eclipse.buildship.core.internal.launch.BaseRunConfigurationAttributes.getWorkingDir(BaseRunConfigurationAttributes.java:83)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:226)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:188)
+	at org.eclipse.buildship.core.internal.launch.RunGradleBuildLaunchRequestJob.<init>(RunGradleBuildLaunchRequestJob.java:48)
+	at org.eclipse.buildship.core.internal.launch.GradleRunConfigurationDelegate.launch(GradleRunConfigurationDelegate.java:32)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 2 2024-05-21 12:32:17.908
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/demo}.
+	at org.eclipse.buildship.core.internal.launch.BaseRunConfigurationAttributes.getWorkingDir(BaseRunConfigurationAttributes.java:83)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:226)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:188)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:65)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:420)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:410)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:920)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:689)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:763)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 120 2024-05-21 12:32:17.908
+!MESSAGE An exception occurred during launch change notification.
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/demo}.
+	at org.eclipse.buildship.core.internal.launch.BaseRunConfigurationAttributes.getWorkingDir(BaseRunConfigurationAttributes.java:83)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:226)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:188)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.convertToGradleRunConfigurationAttributes(ConsoleShowingLaunchListener.java:65)
+	at org.eclipse.buildship.ui.internal.launch.ConsoleShowingLaunchListener.launchAdded(ConsoleShowingLaunchListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.run(LaunchManager.java:420)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.debug.internal.core.LaunchManager$LaunchNotifier.notify(LaunchManager.java:410)
+	at org.eclipse.debug.internal.core.LaunchManager.fireUpdate(LaunchManager.java:920)
+	at org.eclipse.debug.internal.core.LaunchManager.addLaunch(LaunchManager.java:689)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:763)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2024-05-21 12:32:19.405
+!MESSAGE An internal error occurred during: "Launching demo - bootJar".
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Cannot resolve working directory expression ${workspace_loc:/demo}.
+	at org.eclipse.buildship.core.internal.launch.BaseRunConfigurationAttributes.getWorkingDir(BaseRunConfigurationAttributes.java:83)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:226)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadRunConfiguration(DefaultConfigurationManager.java:188)
+	at org.eclipse.buildship.core.internal.launch.RunGradleBuildLaunchRequestJob.<init>(RunGradleBuildLaunchRequestJob.java:48)
+	at org.eclipse.buildship.core.internal.launch.GradleRunConfigurationDelegate.launch(GradleRunConfigurationDelegate.java:32)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1038)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
