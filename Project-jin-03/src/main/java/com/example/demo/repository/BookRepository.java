@@ -20,4 +20,5 @@ public interface BookRepository extends JpaRepository<Book, Integer>{
 	@Query(value = "select * from book where publisher = :publisher1 or publisher = :publisher2", nativeQuery = true)
 	List<Book> get3(@Param("publisher1")String publisher1, @Param("publisher2")String publisher2);
 	
+	
 }
