@@ -11,9 +11,10 @@
 		
 		이름: <input type = "text" name="username" />
 		
-		암호: <input type="text" name="password">
+		암호: <input type="text" name="password" />
 		
 		<button type="submit">전송</button>
+		
 	</form>
 </body>
 </html>
