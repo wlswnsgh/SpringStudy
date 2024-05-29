@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	
-	<form action="QuizController">
+	<form action="QuizController" method="post">
 		이름: <input type="text" name="name" />
 		나이: <input type="text" name="age" />
 		주소: <input type="text" name="address" />

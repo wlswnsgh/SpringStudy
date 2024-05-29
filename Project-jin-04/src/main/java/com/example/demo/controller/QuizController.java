@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.domain.ControllerRepository;
 
 @Controller
-@RequestMapping("/quiz")
+@RequestMapping("/QuizController")
 public class QuizController {
 	
 	ControllerRepository Qcon = new ControllerRepository();
 	
 	@GetMapping("/QController")
 	public String method1() {
-		return "/quiz/QController";
+		return "/QuizController/QController";
 	}
 	
 	@PostMapping("/QuizController")
@@ -27,7 +27,7 @@ public class QuizController {
 		Qcon.save(Q);
 		
 		list.addAttribute("Q", Q);
-		return "/quiz/QController";
+		return "/QuizController/QController";
 	}
 	
 	
