@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h1>정답: </h1>
+	
+	[[${i}]]
+	
+	<br>
+	<th:block th:each="dto: ${i}">
+		<span th:if="${dto%2 == 0}" th:text="${dto}"></span>
+	</th:block>
+	
+</body>
+</html>

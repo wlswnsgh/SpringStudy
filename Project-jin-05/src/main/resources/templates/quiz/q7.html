@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">	
+	.target {
+		background: yellow;
+	}
+</style>
+</head>
+<body>
+	<block th:each="dto : ${list}">
+		<li th:class="${dto.no%5 == 0}?target" th:text="${dto}"></li>
+	</block>
+</body>
+</html>
