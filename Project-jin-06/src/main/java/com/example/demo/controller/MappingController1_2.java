@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.service.annotation.PutExchange;
 
+// 브라우저(클) -> dis -> handler -> dis -> con -> vi -> 브라우저
 // 중복되는 부분을 중간경로로 적용
 @RequestMapping("/board")
 @Controller
