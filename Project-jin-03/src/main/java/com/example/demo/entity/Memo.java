@@ -27,5 +27,4 @@ public class Memo {
 	@Column(length = 200, nullable = true) // 컬럼의 속성
 	String text; // 컬럼의 이름과 자료형
 	
-	
 }

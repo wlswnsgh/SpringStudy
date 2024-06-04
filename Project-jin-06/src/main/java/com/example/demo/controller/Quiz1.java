@@ -38,6 +38,5 @@ public class Quiz1 {
 	public String q4() {
 		System.out.println("q4이 정상처리되었습니다.");
 		return "q4";
-	}
-	
+	}	
 }

@@ -28,5 +28,4 @@ public class ParamController3 {
 		return "ok";
 	}
 	
-	
 }
