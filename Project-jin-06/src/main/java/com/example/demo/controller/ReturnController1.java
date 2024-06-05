@@ -29,7 +29,6 @@ public class ReturnController1 {
 	
 	// 리턴타임 String: html 파일 경로를 직접 지정
 	// 리턴타입 void: url 주소가 자동으로 파일의 경로가 됨
-	
 	@GetMapping("/return/sample")
 	public void ex3(Model model) {
 		
