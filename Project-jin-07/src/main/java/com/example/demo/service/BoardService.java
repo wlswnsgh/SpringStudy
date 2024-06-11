@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.dto.BoardDTO;
 import com.example.demo.entity.Board;
 
@@ -9,24 +11,27 @@ public interface BoardService {
 	// 일반메소드의 목적: 자식 클래스들이 공통으로 사용하는 기능
 	
 	// 추상메소드 (게시물과 관련된 기능)
-	
+
 	// 게시물 등록 메소드 (추상 메소드)
 	int register(BoardDTO dto); // 1. 선언부
 	
+	// 게시물 목록조회 메소드
+	List<BoardDTO> getList();
+	
 	// dto를 엔티티로 변환하는 메소드 (일반메소드)
-//	default Board dtoToEntity(BoardDTO dto) { // 1. 선언부
-//		
-//		// 구현부
-//		Board entity = Board.builder()  
-//							.no(dto.getNo())
-//							.title(dto.getTitle())
-//							.content(dto.getContent())
-//							.writer(dto.getWriter())
-//							.build();
-//		
-//		return entity;
-//		
-//	}
+	default Board dtoToEntity(BoardDTO dto) { // 1. 선언부
+		
+		// 구현부
+		Board entity = Board.builder()  
+							.no(dto.getNo())
+							.title(dto.getTitle())
+							.content(dto.getContent())
+							.writer(dto.getWriter())
+							.build();
+		
+		return entity;
+		
+	}
 	
 		// 엔티티를 dto로 변환하는 메소드
 		// 매개변수: 엔티티, 리턴타입: DTO
@@ -43,7 +48,5 @@ public interface BoardService {
 		
 		return dto;
 	}
-	
-	
 	
 }
