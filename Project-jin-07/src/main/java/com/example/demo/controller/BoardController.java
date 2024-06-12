@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.dto.BoardDTO;
@@ -23,7 +24,7 @@ public class BoardController {
 	// 메인화면을 반환하는 메소드
 	@GetMapping("/main")
 	public void main() {
-		
+	
 	}
 	
 	// 목록화면
@@ -61,7 +62,34 @@ public class BoardController {
 		return "redirect:/board/list"; // HTML파일X URL주소O
 	}
 	
+	// localhost:8080?no = 1
+	@GetMapping("/read")
+	public void read(@RequestParam(name = "no")int no, Model model) {		
+		BoardDTO dto = service.read(no);
+		model.addAttribute("dto", dto);
+	}
 	
+	// 주소: localhost:8080/board/modify?no=1
+	// 수정화면을 반환하는 메소드
+	@GetMapping("/modify")
+	public void modify(@RequestParam(name = "no") int no, Model model) {
+		
+		BoardDTO dto = service.read(no);
+		model.addAttribute("dto",dto); // 화면에 특정 게시물 정보를 전달
+	}
 	
+	// 수정처리 메소드
+	@PostMapping("/modify")
+	public String modifyPost(BoardDTO dto, RedirectAttributes redirectAttributes) {
+		
+		service.modify(dto); // 게시물 수정
+		
+		// addFlashAttribute(): 리다이렉트할 화면에 데이터를 보내는 함수
+		// addAttribute(): 리다이렉트 주소에 파라미터를 추가하는 함수(/board/read?no=1)
+		redirectAttributes.addAttribute("no",dto.getNo());
+		
+		// 상세화면으로 이동
+		return "redirect:/board/read";
+	}
 	
 }

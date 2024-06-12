@@ -18,6 +18,12 @@ public interface BoardService {
 	// 게시물 목록조회 메소드
 	List<BoardDTO> getList();
 	
+	// 게시물 상세조회 메소드
+	BoardDTO read(int no);
+	
+	// 게시물 수정 메소드
+	void modify(BoardDTO dto);
+	
 	// dto를 엔티티로 변환하는 메소드 (일반메소드)
 	default Board dtoToEntity(BoardDTO dto) { // 1. 선언부
 		

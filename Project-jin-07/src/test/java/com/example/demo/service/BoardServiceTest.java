@@ -34,6 +34,19 @@ public class BoardServiceTest {
 		}
 	}
 	
+	@Test
+	public void 게시물단건조회() {
+		BoardDTO list = service.read(5);
+		System.out.println(list);
+		
+	}
 	
+	
+	@Test
+	public void 게시물수정() {
+		BoardDTO result = service.read(3);
+		result.setContent("내용이 수정되었습니다.");
+		service.modify(result);
+	}
 	
 }
