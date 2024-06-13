@@ -61,9 +61,24 @@
 			
 		});
 		
+	$(".listBtn").click(function() {
+			
+			form
+			.attr("action", "/board/modify")
+			.attr("method", "post")
+			.submit();
+			
+		});
+	
+	$(".removeBtn").click(function() {
+		
+		form
+		.attr("action", "/board/remove")
+		.attr("method", "post")
+		.submit();
+		
+	});
+	
 	</script>
-  
   </th:block>
 </th:block>
-
-

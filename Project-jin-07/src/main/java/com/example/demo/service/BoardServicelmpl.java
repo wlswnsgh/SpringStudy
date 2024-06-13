@@ -1,11 +1,12 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.BoardDTO;
@@ -31,18 +32,41 @@ public class BoardServicelmpl implements BoardService{
 	
 	}
 
+//	@Override
+//	public List<BoardDTO> getList() {
+//
+//		List<Board> result = repository.findAll();
+//		
+//		List<BoardDTO> list = new ArrayList<>();
+//		
+//		list = result.stream()
+//					 .map(entity -> entityToDto(entity))
+//					 .collect(Collectors.toList());
+//		
+//		return list; // DTO 리스트 변환
+//	}
+	
 	@Override
-	public List<BoardDTO> getList() {
-
-		List<Board> result = repository.findAll();
+	public Page<BoardDTO> getList(int pageNumber) {
 		
-		List<BoardDTO> list = new ArrayList<>();
+		// 1. 이 코드는 int자료형을 이용한 삼항 연산자이고 변수값은 pageNum이다.
+		// 2. pageNumber인 매개변수가 0일때 값은 0이고 그렇지 않으면 사용자가 입력한 페이지에서 1를 빼준다.
+		int pageNum = (pageNumber == 0) ? 0 :pageNumber - 1;
 		
-		list = result.stream()
-					 .map(entity -> entityToDto(entity))
-					 .collect(Collectors.toList());
+		// 1. Sort 객체를 이용해 정렬를 해준다.
+		// 2. .by("no")는 데이터 모델에 필드를 정해준 것이다. (Board의 no를 말한 것이다.)
 		
-		return list; // DTO 리스트 변환
+		// Sort sort = Sort.by("no").descending(); // 3. descending()는 정렬 방향을 내림차순으로 해준다.
+		Sort sort = Sort.by("no").ascending(); // 3. .ascending()는 정렬 방향을 오름차순을 해준다.
+		
+		Pageable pageable = PageRequest.of(pageNum, 10, sort);
+		
+		Page<Board> entityPage = repository.findAll(pageable);
+		
+		Page<BoardDTO> dtoPage = entityPage
+									.map( entity -> entityToDto(entity));
+		
+		return dtoPage;
 	}
 
 	@Override
@@ -76,6 +100,19 @@ public class BoardServicelmpl implements BoardService{
 			repository.save(entity);
 		}
 		
+	}
+
+	@Override
+	public int remove(int no) {
+		
+		Optional<Board> result = repository.findById(no);
+		
+		if(result.isPresent()) { // .isPresent(): 메서드 값이 존재여부를 확인
+			repository.deleteById(no);
+			return 1; // 성공
+		} else {
+			return 0;
+		}
 	}
 	
 }

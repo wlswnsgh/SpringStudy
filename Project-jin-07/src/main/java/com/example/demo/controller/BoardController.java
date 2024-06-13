@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,14 +27,31 @@ public class BoardController {
 	}
 	
 	// 목록화면
-	@GetMapping("/list")
-	public void list(Model model) {
+	// @GetMapping("/list")
+	// public void list(Model model) {
 		
 		// 서비스를 상요해서 게시물 목록 조회
-		List<BoardDTO> list = service.getList();
+		// List<BoardDTO> list = service.getList();
 		
 		// 화면에 게시물 목록 전달
-		model.addAttribute("list", list);
+		// model.addAttribute("list", list);
+		
+		
+	// }
+	
+	// 목록화면
+	@GetMapping("/list")
+	public void list(@RequestParam(defaultValue = "0", name = "page")int page, Model model) {
+		
+		Page<BoardDTO> list = service.getList(page);
+		
+		model.addAttribute("list",list);
+		
+		System.out.println("전체 페이지 수: " + list.getTotalPages());
+		System.out.println("전체 게시물 수: " + list.getTotalElements());
+		System.out.println("현재 페이지 번호: " + (list.getNumber() + 1));
+		System.out.println("페이지에 표시할 게시물 수: " + list.getNumberOfElements());
+		
 	}
 	
 	// 등록화면을 반환하는 메소드
@@ -90,6 +106,13 @@ public class BoardController {
 		
 		// 상세화면으로 이동
 		return "redirect:/board/read";
+	}
+	
+	// 삭제처리
+	@PostMapping("/remove")
+	public String removePost(@RequestParam(name = "no") int no) {
+		service.remove(no);
+		return "redirect:/board/list";
 	}
 	
 }
