@@ -38,11 +38,14 @@
 		<item value="org.sonatype.m2e.egit.feature:0.17.0.202209271423"/>
 	</list>
 	<section name="SmartImportWizard">
-		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\fullstack\Spring-teacher\spring-study\project08"/>
+			<item value="C:\fullstack\Spring-teacher\spring-study\project08-basic"/>
+			<item value="C:\fullstack\teacher-프론트엔드\frontend-study"/>
 			<item value="C:\fullstack\Spring-workspace"/>
 			<item value="C:\fullstack\Spring-teacher\spring-study"/>
 			<item value="C:\fullstack\Spring-workspace\Project-jin-04\src\main\webapp"/>

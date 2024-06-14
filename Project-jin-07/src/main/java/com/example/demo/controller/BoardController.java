@@ -46,7 +46,6 @@ public class BoardController {
 		Page<BoardDTO> list = service.getList(page);
 		
 		model.addAttribute("list",list);
-		
 		System.out.println("전체 페이지 수: " + list.getTotalPages());
 		System.out.println("전체 게시물 수: " + list.getTotalElements());
 		System.out.println("현재 페이지 번호: " + (list.getNumber() + 1));
@@ -80,9 +79,13 @@ public class BoardController {
 	
 	// localhost:8080?no = 1
 	@GetMapping("/read")
-	public void read(@RequestParam(name = "no")int no, Model model) {		
+	public void read(@RequestParam(name = "no")int no,
+					 @RequestParam(defaultValue = "0", name = "page")int page,
+					 Model model) {		
 		BoardDTO dto = service.read(no);
 		model.addAttribute("dto", dto);
+		
+		model.addAttribute("page", page); // 화면에 페이지 번호 전달
 	}
 	
 	// 주소: localhost:8080/board/modify?no=1

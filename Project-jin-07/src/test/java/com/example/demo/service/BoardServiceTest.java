@@ -27,7 +27,7 @@ public class BoardServiceTest {
 		int no = service.register(dto);
 		
 		System.out.println("새로운 게시물 번호: " + no);
-		
+			
 	}
 	
 //	@Test
@@ -39,7 +39,6 @@ public class BoardServiceTest {
 	
 	@Test
 	public void 게시물목록조회() {
-		
 		Page<BoardDTO> page = service.getList(2);
 		
 		List<BoardDTO> list = page.getContent();
@@ -48,6 +47,8 @@ public class BoardServiceTest {
 			System.out.println(lt);
 		}
 	}
+	
+	
 	
 	@Test
 	public void 게시물단건조회() {

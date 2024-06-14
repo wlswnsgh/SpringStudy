@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 
 import com.example.demo.dto.BoardDTO;
 import com.example.demo.entity.Board;
+import com.example.demo.entity.Member;
 
 public interface BoardService {
 	
@@ -29,14 +30,49 @@ public interface BoardService {
 	int remove(int no);
 	
 	// dto를 엔티티로 변환하는 메소드 (일반메소드)
-	default Board dtoToEntity(BoardDTO dto) { // 1. 선언부
+//	default Board dtoToEntity(BoardDTO dto) { // 1. 선언부
+//		
+//		// 구현부
+//		Board entity = Board.builder()  
+//							.no(dto.getNo())
+//							.title(dto.getTitle())
+//							.content(dto.getContent())
+//							.writer(dto.getWriter())
+//							.build();
+//		
+//		return entity;
+//		
+//	}
+	
+		// 엔티티를 dto로 변환하는 메소드
+		// 매개변수: 엔티티, 리턴타입: DTO
+//		default BoardDTO entityToDto(Board entity) { 
+//		
+//		BoardDTO dto = BoardDTO.builder()  
+//							.no(entity.getNo())
+//							.title(entity.getTitle())
+//							.content(entity.getContent())
+//							.writer(entity.getWriter())
+//							.regDate(entity.getRegDate())
+//							.modDate(entity.getModDate())
+//							.build();
+//		
+//		return dto;
+//	}
+	
+	// 엔티티를 dto로 변환하는 메소드
+	default Board dtoToEntity(BoardDTO dto) { 
 		
-		// 구현부
+		// Member 엔티티 객체 생성
+		Member member = Member.builder()
+							  .id(dto.getWriter())
+							  .build();
+		
 		Board entity = Board.builder()  
 							.no(dto.getNo())
 							.title(dto.getTitle())
 							.content(dto.getContent())
-							.writer(dto.getWriter())
+							.writer(member)
 							.build();
 		
 		return entity;
@@ -51,7 +87,7 @@ public interface BoardService {
 							.no(entity.getNo())
 							.title(entity.getTitle())
 							.content(entity.getContent())
-							.writer(entity.getWriter())
+							.writer(entity.getWriter().getId())
 							.regDate(entity.getRegDate())
 							.modDate(entity.getModDate())
 							.build();

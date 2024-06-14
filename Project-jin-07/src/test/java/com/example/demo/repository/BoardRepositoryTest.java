@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo.entity.Board;
+import com.example.demo.entity.Member;
 
 // 단위테스트 목적: 리파지토리가 가지고 있는 기능을 단독으로 테스트하기 위함
 @SpringBootTest
@@ -37,12 +38,18 @@ public class BoardRepositoryTest {
 		System.out.println("등록전: " + board.toString());
 	}
 	
+	
+	
+
+	
 	@Test
 	void 게시물목록조회() {
 		List<Board> list = repository.findAll();
+		
 		for(Board lt : list) {
 			System.out.println(lt);
 		}
+		
 	}
 	
 	@Test
@@ -70,6 +77,12 @@ public class BoardRepositoryTest {
 	@Test
 	void 게시물삭제() {
 		repository.deleteById(1);
+	}
+	
+	@Test
+	public void 특정회원이작성한게시물삭제() {	
+		Member member = Member.builder().id("user1").build();
+		repository.deleteWriter(member);
 	}
 
 	
