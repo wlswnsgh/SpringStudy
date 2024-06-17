@@ -30,8 +30,8 @@ public class MeberRepositoryTest {
 		list.add(mem3);
 		
 		member.saveAll(list);
+		
 	}
-	
 	
 	
 	@Test
@@ -65,11 +65,6 @@ public class MeberRepositoryTest {
 		
 		member.save(member2);
 	}
-	
-//	@Test
-//	public void 데이터삭제() {
-//		member.deleteById("1");
-//	}
 	
 	@Test
 	public void 모든회원삭제() {

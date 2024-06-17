@@ -25,4 +25,5 @@ public class MemberServiceTest {
 		System.out.println(list);
 		
 	}
+	
 }

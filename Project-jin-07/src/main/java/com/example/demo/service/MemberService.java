@@ -10,6 +10,12 @@ public interface MemberService {
 	// 회원 목록 조회 메소드
 	Page<MemberDTO> getList(int pageNumber);
 	
+	// 회원 등록
+	boolean register(MemberDTO dto); 
+
+	// 회원 단건 조회
+	MemberDTO read(String id);
+	
 	// 엔티티를 DTO로 변환하는 메소드
 	default MemberDTO entityToDto(Member entity) {
 		
@@ -24,7 +30,7 @@ public interface MemberService {
 	}
 	
 	// DTO를 엔티티로 변경하기
-	default Member dtoToEntity(Member dto) {
+	default Member dtoToEntity(MemberDTO dto) {
 		
 		Member entity = Member.builder()
 							  .id(dto.getId())
