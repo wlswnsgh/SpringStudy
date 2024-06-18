@@ -62,7 +62,7 @@ public class BoardRepositoryTest {
 	@Test
 	void 게시물등록() {
 		//회원 엔티티 생성
-		Member member = Member.builder().id("admin").build();
+		Member member = Member.builder().id("1").build();
 		//회원테이블에 없는 아이디를 사용하면 에러남
 		Board board = new Board(0,"4번글","내용입니다", member);
 		repository.save(board);	
