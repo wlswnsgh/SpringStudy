@@ -31,20 +31,6 @@ public class BoardServicelmpl implements BoardService{
 		return newNo; // 새로운 글의 번호 반환
 	
 	}
-
-//	@Override
-//	public List<BoardDTO> getList() {
-//
-//		List<Board> result = repository.findAll();
-//		
-//		List<BoardDTO> list = new ArrayList<>();
-//		
-//		list = result.stream()
-//					 .map(entity -> entityToDto(entity))
-//					 .collect(Collectors.toList());
-//		
-//		return list; // DTO 리스트 변환
-//	}
 	
 	@Override
 	public Page<BoardDTO> getList(int pageNumber) {

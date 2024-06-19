@@ -35,9 +35,6 @@ public class Board extends BaseEntity{
 	@Column(length = 1500, nullable = false)
 	String content; // 내용
 	
-//	@Column(length = 50, nullable = false)
-//	String writer; // 작성자
-	
 	@ManyToOne // 관계차수는 1:N
 	Member writer; // 작성자
 	

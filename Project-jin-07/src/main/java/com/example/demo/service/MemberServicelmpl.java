@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.MemberDTO;
@@ -18,6 +19,9 @@ public class MemberServicelmpl implements MemberService {
 
 	@Autowired
 	MemberRepository repository;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	
 	@Override
 	public Page<MemberDTO> getList(int pageNumber) {
@@ -47,6 +51,11 @@ public class MemberServicelmpl implements MemberService {
 		} else {
 			// 해당아이디가 사용되지 않는다면, 회원 등록하고 처리결과는 성공(true) 반환
 			Member entity = dtoToEntity(dto);
+			
+			// 패스워드 인코더로 패스워드 암호화하기
+			String enPw = passwordEncoder.encode(entity.getPassword());
+			entity.setPassword(enPw);
+			
 			repository.save(entity);
 			
 			return true;

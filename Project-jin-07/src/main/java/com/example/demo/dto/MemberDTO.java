@@ -24,4 +24,7 @@ public class MemberDTO {
 	LocalDateTime regDate; // 등록일
 	
 	LocalDateTime modDate; // 수정일
+	
+	String role; // 사용자 등급(사용자:ROLE_USER, 관리자:ROLE_ADMIN)
+	
 }

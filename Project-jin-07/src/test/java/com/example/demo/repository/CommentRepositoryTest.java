@@ -19,6 +19,7 @@ public class CommentRepositoryTest {
 	
 	@Test
 	public void 댓글등록() {
+		
 		// 테이블에 있는 회원
 		Member member = Member.builder().id("1").build();
 		

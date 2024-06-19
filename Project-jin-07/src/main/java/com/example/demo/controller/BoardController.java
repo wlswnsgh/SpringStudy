@@ -21,19 +21,6 @@ public class BoardController {
 	BoardService service;
 	
 	// 목록화면
-	// @GetMapping("/list")
-	// public void list(Model model) {
-		
-		// 서비스를 상요해서 게시물 목록 조회
-		// List<BoardDTO> list = service.getList();
-		
-		// 화면에 게시물 목록 전달
-		// model.addAttribute("list", list);
-		
-		
-	// }
-	
-	// 목록화면
 	@GetMapping("/list")
 	public void list(@RequestParam(defaultValue = "0", name = "page")int page, Model model) {
 		

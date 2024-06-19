@@ -17,7 +17,6 @@ public interface BoardService {
 	int register(BoardDTO dto); // 1. 선언부
 	
 	// 게시물 목록조회 메소드
-//	List<BoardDTO> getList();
 	Page<BoardDTO> getList(int pageNumber);
 	
 	// 게시물 상세조회 메소드
@@ -28,37 +27,6 @@ public interface BoardService {
 	
 	// 게시물 삭제 메소드
 	int remove(int no);
-	
-	// dto를 엔티티로 변환하는 메소드 (일반메소드)
-//	default Board dtoToEntity(BoardDTO dto) { // 1. 선언부
-//		
-//		// 구현부
-//		Board entity = Board.builder()  
-//							.no(dto.getNo())
-//							.title(dto.getTitle())
-//							.content(dto.getContent())
-//							.writer(dto.getWriter())
-//							.build();
-//		
-//		return entity;
-//		
-//	}
-	
-		// 엔티티를 dto로 변환하는 메소드
-		// 매개변수: 엔티티, 리턴타입: DTO
-//		default BoardDTO entityToDto(Board entity) { 
-//		
-//		BoardDTO dto = BoardDTO.builder()  
-//							.no(entity.getNo())
-//							.title(entity.getTitle())
-//							.content(entity.getContent())
-//							.writer(entity.getWriter())
-//							.regDate(entity.getRegDate())
-//							.modDate(entity.getModDate())
-//							.build();
-//		
-//		return dto;
-//	}
 	
 	// 엔티티를 dto로 변환하는 메소드
 	default Board dtoToEntity(BoardDTO dto) { 

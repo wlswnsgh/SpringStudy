@@ -30,13 +30,6 @@ public class BoardServiceTest {
 			
 	}
 	
-//	@Test
-//	public void 게시물목록조회() {
-//		for(BoardDTO lt : service.getList()) {
-//			System.out.println(lt.toString());
-//		}
-//	}
-	
 	@Test
 	public void 게시물목록조회() {
 		Page<BoardDTO> page = service.getList(2);

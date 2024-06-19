@@ -16,6 +16,22 @@ public class MemberServiceTest {
 	MemberService service;
 	
 	@Test
+	public void 회원등록() {
+		MemberDTO dto = MemberDTO.builder()
+				.id("4")
+				.password("gh123")
+				.name("gh")
+				.build();
+		boolean isSuccess = service.register(dto);
+		
+		if(isSuccess) {
+			System.out.println("회원이 등록되었습니다.");
+		}else {
+			System.out.println("중복된 회원 입니다.");
+		}
+	}
+	
+	@Test
 	public void 회원목록조회() {
 		
 		Page<MemberDTO> page = service.getList(1);
@@ -24,6 +40,12 @@ public class MemberServiceTest {
 		
 		System.out.println(list);
 		
+	}
+	
+	@Test
+	public void 회원단건조회() {
+		MemberDTO dto = service.read("1");
+		System.out.println(dto);
 	}
 	
 }

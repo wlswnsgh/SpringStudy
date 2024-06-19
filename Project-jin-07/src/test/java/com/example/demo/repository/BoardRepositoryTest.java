@@ -18,42 +18,6 @@ public class BoardRepositoryTest {
 	@Autowired
 	BoardRepository repository;
 	
-//	// 페이지 테스를 위해 게시물 30건 추가
-//	@Test
-//	public void 게시물30개추가() {
-//		for(int i=1; i<=30; i++) {
-//			Board board = Board.builder()
-//							.title(i+"번글")
-//							.content("안녕하세요")
-//							.writer("둘리")
-//							.build();
-//			repository.save(board);
-//		}
-//	}
-
-//	@Test
-//	public void 페이지테스트() {
-//		//1페이지 10개
-//		Pageable pageable = PageRequest.of(0,10); // of메소드로 객체 생성
-//		Page<Board> result = repository.findAll(pageable);
-//		System.out.println(result); // 게시물 리스트 + 페이지정보
-//
-//		List<Board> list = result.getContent();
-//		System.out.println(list); //게시물 리스트
-//	}
-//
-//	@Test
-//	public void 정렬조건추가하기() {
-//		//no 필드값을 기준으로 역정렬
-//		Sort sort = Sort.by("no").descending();
-//
-//		Pageable pageable = PageRequest.of(0,10, sort); //정렬정보 추가
-//		Page<Board> result = repository.findAll(pageable);
-//
-//		List<Board> list = result.getContent();
-//		System.out.println(list);
-//	}
-	
 	@Test
 	void 빈을가지고왔는지확인() {
 		System.out.println("repository의 주소: " + repository);
@@ -61,8 +25,10 @@ public class BoardRepositoryTest {
 	
 	@Test
 	void 게시물등록() {
+		
 		//회원 엔티티 생성
 		Member member = Member.builder().id("1").build();
+		
 		//회원테이블에 없는 아이디를 사용하면 에러남
 		Board board = new Board(0,"4번글","내용입니다", member);
 		repository.save(board);	
