@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -45,17 +47,17 @@ public class BoardController {
 	// 등록을 처리하는 메소드
 	@PostMapping("/register")
 	public String registerPost(BoardDTO dto
-								, RedirectAttributes redirectAttributes) {
+							  ,RedirectAttributes redirectAttributes
+							  ,Principal principal) {
 		
-		// 게시물 등록하고 새로운 게시물 번호 반환
-		int no = service.register(dto);
-		
-		// 리다이렉트된 페이지(목록화면)에 새로운 게시물 번호 전달
+		// 인증 객체에서 아이디를 꺼내서, 게시물의 작성자로 입력
+		String id = principal.getName(); // id를 꺼낸다.
+		dto.setWriter(id); // id를 저장한다.
+		int no = service.register(dto); 
 		redirectAttributes.addFlashAttribute("msg", no);
 		
-		// 게시물 목록 화면으로 리다이렉트 하기
-		// 리다이렉트? 새로운 URL을 다시 호출하는 것
-		return "redirect:/board/list"; // HTML파일X URL주소O
+		return "redirect:/board/list";
+		
 	}
 	
 	// localhost:8080?no = 1

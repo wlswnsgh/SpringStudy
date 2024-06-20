@@ -18,7 +18,7 @@ public class MemberServiceTest {
 	@Test
 	public void 회원등록() {
 		MemberDTO dto = MemberDTO.builder()
-				.id("4")
+				.id("1")
 				.password("gh123")
 				.name("gh")
 				.build();
